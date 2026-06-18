@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="380V配电器">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0a0e14">
+<meta name="application-name" content="380V配电器">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAC5UlEQVR4nO1bu1EDMRBdGApwQHYzuIQLKIHQpbgBxgV4aMClELoEB1cCzFzmwB1AwAiErM+u9unDcC/CnG+l9/ZpdSdLRAsWLPjPuKnZ2MPL/MH97vvzUKVvRRtxCY/D6tX3vWm+bGLXiMoJUiSoIR4ilYtpvmzQQkCDPbzMH2jSLtCOgAQplfEYUELcajtisq4hf9yuN9J7THuSwuqDSj2J5XNIEhE9Hd6S8TW1IesmLvFc0j6khMgdEmIBOOSRxG2UcINIgJbkbXDcwBVBVARj5I/b9aYGedMWKhbbAbHs1yLuQ8gNXBewHBCbarTknw5vmtuD7Y/D6pUzRSYFsIOYSptqnAsteU4/UiLcSRo670c6EkHtftyukeHEiDrAVu+8H6ENo7Jv4LrA/hxzgcgBKBjy03x5vN9Nv66d9+MpN27OkAxWyRLZv99Nj0RE47A6EX0JEPquRginze+/fbNCFQcY4kQ/5Ln3oIQIwVsDtG9YNmzyNmLZ59yfAx+v5DSosb/b+VD2U67QiJDqv3o9IIQUee5QCMVDoZgAHIzD6mSEkAqCwpUAiOrPtb42Lhc2D7cOVJkFYgWvVeYN4ENAM1Y5YqBrQdMa0AOaF0Hu80ApdOEAW4TaNaGpADbxVk7owgEGLUToSgCDmsMALoD27S3lAvTbYZcOqDkUrgSwFw3c1RouSr3D58aNLYp06YCaKCYA2gWlXJUUIHcYEOE6rYmT6r9XAOQ+HK0IyMw3WxQ1JCRvcqUXQw2imS71w0hMCCTx1JI4UaMfRmpll4NoEUQ8E7QCJ/tEwmnwr4gg6WdSAFe93kVw+5ea0VgOqLVxGQ3YDhE3WK8u4I57G9mPwr2JkNufrH2C7v/Qmyck8BGXDFmxA3zBW7lBS54IsFfY/lzTCdJqH4K6utceEois24CeF/ABIUZsiGmnaPiJkdh1iRiputLViREXyC02Lro+M+QCKcSfOjUWQo/nBhcs+Of4BLPHiahLrVbNAAAAAElFTkSuQmCC">
+<title>微动科技 - 380V工业配电计算器</title>
+<style>
+:root { color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #0a0e14;
+  color: #c8d6e5;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(180deg, #141b24 0%, #0d1117 100%);
+  border-bottom: 2px solid #1e88e5;
+  padding: 14px 16px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(30,136,229,0.15);
+}
+.header .brand { font-size: 11px; color: #5a9fd4; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 2px; }
+.header h1 { font-size: 18px; font-weight: 700; color: #e8f0f8; letter-spacing: 1px; }
+.header .subtitle { font-size: 11px; color: #607080; margin-top: 2px; }
+
+/* Main container */
+.container { max-width: 560px; margin: 0 auto; padding: 12px; }
+
+/* Card */
+.card {
+  background: linear-gradient(170deg, #141c25 0%, #0f161e 100%);
+  border: 1px solid #1a2530;
+  border-radius: 12px;
+  padding: 18px 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #1a2530;
+}
+.card-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.card-title { font-size: 15px; font-weight: 600; color: #dce6f0; }
+.card-subtitle { font-size: 11px; color: #5a7088; margin-top: 1px; }
+
+.icon-power { background: rgba(30,136,229,0.2); color: #4da3f5; }
+.icon-cable { background: rgba(255,152,0,0.2); color: #ffb74d; }
+.icon-drop { background: rgba(156,39,176,0.2); color: #ce93d8; }
+.icon-cost { background: rgba(76,175,80,0.2); color: #81c784; }
+.icon-breaker { background: rgba(244,67,54,0.2); color: #ef5350; }
+.icon-short { background: rgba(255,193,7,0.2); color: #ffd54f; }
+.icon-pfc { background: rgba(0,188,212,0.2); color: #4dd0e1; }
+
+/* Form elements */
+.form-row { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.form-group { flex: 1; min-width: 120px; }
+.form-group label {
+  display: block; font-size: 11px; color: #5a7a95; margin-bottom: 5px;
+  letter-spacing: 0.5px; font-weight: 500;
+}
+.form-group input, .form-group select {
+  width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #1e2a36;
+  background: #0d1319; color: #dce6f0; font-size: 15px;
+  font-family: inherit; outline: none; transition: border-color 0.2s;
+  -webkit-appearance: none; appearance: none;
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a7a95' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+  padding-right: 30px;
+}
+.form-group input:focus, .form-group select:focus { border-color: #1e88e5; box-shadow: 0 0 0 2px rgba(30,136,229,0.15); }
+.form-group input::placeholder { color: #3a4a58; }
+
+/* Buttons */
+.btn {
+  width: 100%; padding: 12px; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 1px;
+  transition: all 0.2s; font-family: inherit;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  color: #fff; margin-top: 4px;
+  box-shadow: 0 2px 10px rgba(30,136,229,0.3);
+}
+.btn-primary:active { transform: scale(0.98); opacity: 0.9; }
+
+/* Result display */
+.result-area {
+  margin-top: 12px; padding: 14px; border-radius: 10px;
+  background: rgba(0,0,0,0.25); border: 1px solid #1e2a36;
+  display: none;
+}
+.result-area.show { display: block; }
+.result-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.result-row:last-child { border-bottom: none; }
+.result-label { font-size: 12px; color: #5a7a95; }
+.result-value { font-size: 14px; font-weight: 600; color: #dce6f0; }
+.result-value.highlight { color: #4da3f5; font-size: 18px; }
+.result-value.warn { color: #ffb74d; }
+.result-value.danger { color: #ef5350; }
+.result-value.good { color: #81c784; }
+
+/* Cable table */
+.cable-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
+.cable-table th {
+  background: #1a2530; padding: 8px 6px; text-align: center;
+  color: #5a7a95; font-weight: 500; font-size: 11px;
+}
+.cable-table td {
+  padding: 7px 6px; text-align: center; border-bottom: 1px solid #1a2530;
+}
+.cable-table tr:hover td { background: rgba(30,136,229,0.05); }
+.cable-table .selected td { background: rgba(30,136,229,0.12); color: #4da3f5; font-weight: 600; }
+
+/* Info badge */
+.badge {
+  display: inline-block; padding: 3px 8px; border-radius: 4px;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
+}
+.badge-yjv { background: rgba(30,136,229,0.15); color: #4da3f5; }
+.badge-vvr { background: rgba(255,152,0,0.15); color: #ffb74d; }
+.badge-rvv { background: rgba(76,175,80,0.15); color: #81c784; }
+
+/* Footer */
+.footer {
+  text-align: center; padding: 20px 16px; color: #3a4a58; font-size: 11px;
+  letter-spacing: 1px;
+}
+.footer .brand-name { color: #1e88e5; font-weight: 600; }
+
+/* Notification toast */
+.toast {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+  background: #1e88e5; color: white; padding: 10px 24px; border-radius: 24px;
+  font-size: 13px; font-weight: 600; z-index: 1000;
+  opacity: 0; transition: opacity 0.3s; pointer-events: none;
+  box-shadow: 0 4px 16px rgba(30,136,229,0.4);
+}
+.toast.show { opacity: 1; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1e2a36; border-radius: 2px; }
+
+/* Formula hint */
+.formula-hint {
+  font-size: 10px; color: #3a4a58; margin-top: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+/* ===== PWA Install Banner ===== */
+.install-banner {
+  display: none;
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(30,136,229,0.35);
+}
+.install-banner.show { display: flex; }
+.install-banner .install-text { flex: 1; line-height: 1.4; }
+.install-banner .install-btn {
+  background: #fff;
+  color: #1565c0;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.install-banner .install-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+.ios-guide {
+  display: none;
+  background: #141c25;
+  border: 1px solid #1a2530;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  color: #c8d6e5;
+  line-height: 1.6;
+}
+.ios-guide.show { display: block; }
+.ios-guide .share-icon {
+  display: inline-block;
+  background: #1e88e5;
+  color: #fff;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+.ios-guide .add-icon {
+  display: inline-block;
+  background: #fff;
+  color: #1e88e5;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  vertical-align: middle;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">微动科技</div>
+  <h1>380V 工业配电计算器</h1>
+  <div class="subtitle">YJV / VVR / RVV 铜芯电缆选型 · 专业工业电工工具</div>
+</div>
+
+
+<!-- Floating install button -->
+<div id="installFab" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); 
+     background: linear-gradient(135deg, #1e88e5, #1565c0); color:#fff; padding:14px 28px; 
+     border-radius: 30px; font-size:14px; font-weight:700; z-index:999; cursor:pointer;
+     box-shadow: 0 6px 24px rgba(30,136,229,0.5); letter-spacing:1px;"
+     onclick="promptInstall()">
+  📲 添加到手机桌面
+</div>
+
+<div class="container">
+
+  <!-- PWA Install Banner -->
+  <div class="install-banner" id="installBanner" onclick="installPWA()">
+    <span style="font-size:22px;">📲</span>
+    <span class="install-text">点击安装到手机桌面<br><span style="font-size:11px;opacity:0.8;">像原生App一样打开使用</span></span>
+    <button class="install-btn">安装</button>
+    <button class="install-close" onclick="event.stopPropagation();dismissInstall()">&times;</button>
+  </div>
+  <div class="ios-guide" id="iosGuide">
+    <strong>📱 添加到 iPhone/iPad 桌面</strong><br>
+    点击浏览器下方 <span class="share-icon">⎋</span> <b>分享</b> → 滑动找到 <span class="add-icon">➕ 添加到主屏幕</span> → 点右上角「添加」
+  </div>
+
+  <!-- 1. 功率/电流/线径计算 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-power">&#9889;</div>
+      <div>
+        <div class="card-title">功率与线径计算</div>
+        <div class="card-subtitle">三相对称负载 · 铜芯电缆自动选型</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>电缆类型</label>
+        <select id="cableType">
+          <option value="YJV">YJV (交联聚乙烯)</option>
+          <option value="VVR">VVR (聚氯乙烯)</option>
+          <option value="RVV">RVV (铜芯软电缆)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>敷设方式</label>
+        <select id="installMethod">
+          <option value="air">空气中敷设</option>
+          <option value="buried">埋地敷设</option>
+          <option value="tray">桥架敷设</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>计算方式</label>
+        <select id="calcMode" onchange="toggleCalcMode()">
+          <option value="power">已知功率算线径</option>
+          <option value="current">已知电流算线径</option>
+          <option value="cable">已知线径反算功率</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row" id="row-power">
+      <div class="form-group">
+        <label>额定功率 (kW)</label>
+        <input type="number" id="powerKw" placeholder="例：75" step="0.1" min="0.1" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>功率因数 cos&phi;</label>
+        <input type="number" id="powerFactor" placeholder="0.85" value="0.85" step="0.01" min="0.5" max="1" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row" id="row-current" style="display:none">
+      <div class="form-group">
+        <label>工作电流 (A)</label>
+        <input type="number" id="currentA" placeholder="例：150" step="0.1" min="0.1" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="form-row" id="row-cable" style="display:none">
+      <div class="form-group">
+        <label>电缆截面积 (mm&sup2;)</label>
+        <select id="cableSizeSelect">
+          <option value="1.5">1.5</option><option value="2.5">2.5</option><option value="4">4</option>
+          <option value="6">6</option><option value="10">10</option><option value="16">16</option>
+          <option value="25">25</option><option value="35">35</option><option value="50">50</option>
+          <option value="70">70</option><option value="95">95</option><option value="120">120</option>
+          <option value="150">150</option><option value="185">185</option><option value="240">240</option>
+          <option value="300">300</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>环境温度 (&deg;C)</label>
+        <input type="number" id="ambientTemp" value="30" step="1" min="-10" max="60" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>并排根数</label>
+        <select id="bundleCount">
+          <option value="1">1根</option><option value="2">2根</option><option value="3">3根</option>
+          <option value="4">4根</option><option value="6">6根</option><option value="8">8根</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" onclick="calculateCable()">开始计算</button>
+
+    <div class="result-area" id="result-cable"></div>
+    <div id="cable-table-container" style="margin-top:10px;"></div>
+  </div>
+
+  <!-- 2. 电压降计算 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-drop">&#128201;</div>
+      <div>
+        <div class="card-title">电压降计算</div>
+        <div class="card-subtitle">线路压降校核 &middot; GB 50052规范</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>工作电流 (A)</label>
+        <input type="number" id="vdCurrent" placeholder="例：150" step="0.1" min="0.1" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>电缆长度 (m)</label>
+        <input type="number" id="vdLength" placeholder="例：200" step="0.1" min="0.1" value="100" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>截面积 (mm&sup2;)</label>
+        <select id="vdCableSize">
+          <option value="1.5">1.5</option><option value="2.5">2.5</option><option value="4">4</option>
+          <option value="6">6</option><option value="10">10</option><option value="16">16</option><option value="25">25</option>
+          <option value="35">35</option><option value="50">50</option><option value="70">70</option>
+          <option value="95" selected>95</option><option value="120">120</option>
+          <option value="150">150</option><option value="185">185</option><option value="240">240</option>
+          <option value="300">300</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>功率因数 cos&phi;</label>
+        <input type="number" id="vdPowerFactor" value="0.85" step="0.01" min="0.5" max="1" inputmode="decimal">
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="calcVoltageDrop()">计算电压降</button>
+    <div class="formula-hint">&Delta;U% = &radic;3&middot;I&middot;L&middot;(R&middot;cos&phi; + X&middot;sin&phi;) / (10&middot;Un)  |  Un=380V</div>
+    <div class="result-area" id="result-vdrop"></div>
+  </div>
+
+  <!-- 3. 电费估算 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-cost">&#128176;</div>
+      <div>
+        <div class="card-title">电费估算</div>
+        <div class="card-subtitle">运行成本预估 &middot; 日/月/年</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>设备功率 (kW)</label>
+        <input type="number" id="ecPower" placeholder="例：75" step="0.1" min="0.1" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>电价 (元/kWh)</label>
+        <input type="number" id="ecPrice" value="0.85" step="0.01" min="0.01" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>日运行时间 (h)</label>
+        <input type="number" id="ecDailyHours" value="8" step="0.5" min="0.5" max="24" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>月运行天数</label>
+        <input type="number" id="ecMonthlyDays" value="30" step="1" min="1" max="31" inputmode="decimal">
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="calcElectricCost()">估算电费</button>
+    <div class="result-area" id="result-ecost"></div>
+  </div>
+
+  <!-- 4. 断路器选择 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-breaker">&#128268;</div>
+      <div>
+        <div class="card-title">断路器选择建议</div>
+        <div class="card-subtitle">MCCB/ACB 选型参考 &middot; 脱扣曲线匹配</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>计算电流 (A)</label>
+        <input type="number" id="cbCurrent" placeholder="例：150" step="0.1" min="0.1" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>负载类型</label>
+        <select id="cbLoadType">
+          <option value="general">一般负载</option>
+          <option value="motor">电动机</option>
+          <option value="lighting">照明/电热</option>
+          <option value="welder">电焊机</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="selectBreaker()">选型建议</button>
+    <div class="result-area" id="result-breaker"></div>
+  </div>
+
+  <!-- 5. 短路电流估算 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-short">&#9888;</div>
+      <div>
+        <div class="card-title">短路电流估算</div>
+        <div class="card-subtitle">三相短路容量估算 &middot; 电缆热稳定校核</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>变压器容量 (kVA)</label>
+        <input type="number" id="scTrafoKva" placeholder="例：800" step="1" min="10" value="800" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>变压器阻抗 %Uk</label>
+        <input type="number" id="scTrafoUk" placeholder="6" value="6" step="0.1" min="1" max="20" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>电缆截面积 (mm&sup2;)</label>
+        <select id="scCableSize">
+          <option value="1.5">1.5</option><option value="2.5">2.5</option><option value="4">4</option>
+          <option value="6">6</option><option value="10">10</option><option value="16">16</option><option value="25">25</option><option value="35">35</option><option value="50">50</option><option value="70">70</option>
+          <option value="95" selected>95</option><option value="120">120</option><option value="150">150</option><option value="185">185</option><option value="240">240</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>电缆长度 (m)</label>
+        <input type="number" id="scCableLength" placeholder="例：50" value="50" step="1" min="1" inputmode="decimal">
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="calcShortCircuit()">估算短路电流</button>
+    <div class="result-area" id="result-shortcircuit"></div>
+  </div>
+
+  <!-- 6. 功率因数补偿 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-pfc">&#128259;</div>
+      <div>
+        <div class="card-title">功率因数补偿计算</div>
+        <div class="card-subtitle">并联电容器选型 &middot; 无功补偿容量</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>有功功率 (kW)</label>
+        <input type="number" id="pfcPower" placeholder="例：200" step="0.1" min="0.1" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>当前 cos&phi;1</label>
+        <input type="number" id="pfcCosPhi1" value="0.70" step="0.01" min="0.3" max="0.99" inputmode="decimal">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>目标 cos&phi;2</label>
+        <input type="number" id="pfcCosPhi2" value="0.95" step="0.01" min="0.7" max="1.0" inputmode="decimal">
+      </div>
+      <div class="form-group">
+        <label>补偿方式</label>
+        <select id="pfcMethod">
+          <option value="central">集中补偿</option>
+          <option value="group">分组补偿</option>
+          <option value="local">就地补偿</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="calcPFC()">计算补偿容量</button>
+    <div class="formula-hint">Qc = P &times; (tan(acos&phi;1) - tan(acos&phi;2))  |  按标准电容器取整</div>
+    <div class="result-area" id="result-pfc"></div>
+  </div>
+
+  <div class="footer">
+    <span class="brand-name">微动科技</span> &middot; 380V工业配电计算器 v1.0<br>
+    结果仅供参考，实际工程以国标为准<br>
+    GB 50217 / GB 50054 / GB 50052
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// =================== Service Worker (Required for PWA install) ===================
+if ('serviceWorker' in navigator) {
+  var swCode = [
+    "var CACHE='380v-calc-v1';",
+    "var URLS=['./'];",
+    "self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(URLS)}));self.skipWaiting();});",
+    "self.addEventListener('activate',function(e){e.waitUntil(self.clients.claim());});",
+    "self.addEventListener('fetch',function(e){e.respondWith(caches.match(e.request).then(function(r){return r||fetch(e.request)}));});"
+  ].join('');
+  var swBlob = new Blob([swCode], {type: 'application/javascript'});
+  var swUrl = URL.createObjectURL(swBlob);
+  navigator.serviceWorker.register(swUrl, {scope: './'}).then(function(reg) {
+    console.log('SW registered, scope:', reg.scope);
+  }).catch(function(err) {
+    console.log('SW registration failed:', err);
+  });
+}
+
+// ===================== PWA 安装 =====================
+var deferredPrompt = null;
+var isIOS2 = /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+var isAndroid = /android/.test(navigator.userAgent.toLowerCase());
+var isStandalone2 = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+
+function promptInstall() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function(r) {
+      if (r.outcome === 'accepted') {
+        document.getElementById('installFab').style.display = 'none';
+        document.getElementById('installBanner').classList.remove('show');
+        showToast('安装成功！');
+      }
+      deferredPrompt = null;
+    });
+  } else if (isIOS2 && !isStandalone2) {
+    document.getElementById('iosGuide').classList.toggle('show');
+  } else if (isAndroid) {
+    // Fallback: show manual instructions
+    showToast('请点浏览器菜单 → 添加到主屏幕');
+  }
+}
+
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installBanner').classList.add('show');
+  document.getElementById('installFab').style.display = 'block';
+  document.getElementById('iosGuide').classList.remove('show');
+});
+
+window.addEventListener('appinstalled', function() {
+  document.getElementById('installBanner').classList.remove('show');
+  document.getElementById('installFab').style.display = 'none';
+  document.getElementById('iosGuide').classList.remove('show');
+  deferredPrompt = null;
+});
+
+function showInstallPrompt() {
+  if (isStandalone2) return;
+  var dismissed = localStorage.getItem('pwa-dismiss');
+  if (dismissed && Date.now() - parseInt(dismissed) < 7*86400000) return;
+  
+  if (isIOS2) {
+    document.getElementById('iosGuide').classList.add('show');
+  }
+  // Android: fab button only shows when beforeinstallprompt fires
+  // If already installed via PWA, it won't show
+}
+
+function dismissInstall() {
+  localStorage.setItem('pwa-dismiss', Date.now().toString());
+  document.getElementById('installBanner').classList.remove('show');
+  document.getElementById('installFab').style.display = 'none';
+  document.getElementById('iosGuide').classList.remove('show');
+}
+
+function installPWA() {
+  promptInstall();
+}
+
+// Check if already in standalone mode
+if (!isStandalone2) {
+  // Show persistent install fab after a delay if beforeinstallprompt didn't fire
+  setTimeout(function() {
+    if (!deferredPrompt && !isStandalone2 && isAndroid) {
+      var dismissed = localStorage.getItem('pwa-dismiss');
+      if (!dismissed || Date.now() - parseInt(dismissed) >= 3*86400000) {
+        document.getElementById('installFab').style.display = 'block';
+      }
+    }
+    if (isIOS2 && !isStandalone2) {
+      var dismissed = localStorage.getItem('pwa-dismiss');
+      if (!dismissed || Date.now() - parseInt(dismissed) >= 7*86400000) {
+        document.getElementById('iosGuide').classList.add('show');
+      }
+    }
+  }, 3000);
+}
+
+var CABLE_DATA = {
+  1.5:  [25,30,22, 20,24,18, 16,20,14],
+  2.5:  [34,40,30, 28,33,25, 22,27,20],
+  4:    [45,52,40, 38,44,35, 30,36,28],
+  6:    [58,66,52, 50,57,45, 40,46,36],
+  10:   [80,88,70, 68,76,60, 55,63,50],
+  16:   [107,115,95, 92,100,82, 75,83,68],
+  25:   [142,150,125, 122,130,108, 102,109,90],
+  35:   [175,182,155, 152,159,135, 128,135,112],
+  50:   [215,220,190, 186,192,165, 158,165,138],
+  70:   [270,275,240, 235,240,210, 200,206,175],
+  95:   [330,332,295, 288,290,258, 248,252,215],
+  120:  [382,380,340, 335,333,300, 290,292,252],
+  150:  [440,435,390, 388,382,348, 338,336,295],
+  185:  [505,495,450, 445,438,402, 392,388,345],
+  240:  [600,580,535, 528,515,480, 468,460,415],
+  300:  [690,660,615, 610,588,555, 545,530,482]
+};
+var CABLE_SIZES = Object.keys(CABLE_DATA).map(Number);
+
+function tempCorrection(temp) {
+  if (temp <= 25) return 1.05;
+  if (temp <= 30) return 1.00;
+  if (temp <= 35) return 0.94;
+  if (temp <= 40) return 0.87;
+  if (temp <= 45) return 0.79;
+  if (temp <= 50) return 0.71;
+  if (temp <= 55) return 0.61;
+  return 0.50;
+}
+
+function bundleCorrection(n) {
+  var c = {1:1.0, 2:0.85, 3:0.78, 4:0.72, 6:0.67, 8:0.63};
+  return c[n] || 0.6;
+}
+
+function getAmpacity(size, cableType, installMethod) {
+  var data = CABLE_DATA[size];
+  if (!data) return 0;
+  var tIdx = {YJV:0, VVR:3, RVV:6}[cableType];
+  var mIdx = {air:0, buried:1, tray:2}[installMethod];
+  return data[tIdx + mIdx];
+}
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._timeout);
+  t._timeout = setTimeout(function(){ t.classList.remove('show'); }, 2000);
+}
+
+// ===================== 1. 功率/线径 =====================
+function toggleCalcMode() {
+  var m = document.getElementById('calcMode').value;
+  document.getElementById('row-power').style.display = m==='power' ? '' : 'none';
+  document.getElementById('row-current').style.display = m==='current' ? '' : 'none';
+  document.getElementById('row-cable').style.display = m==='cable' ? '' : 'none';
+}
+
+function calculateCable() {
+  var mode = document.getElementById('calcMode').value;
+  var ct = document.getElementById('cableType').value;
+  var im = document.getElementById('installMethod').value;
+  var temp = parseFloat(document.getElementById('ambientTemp').value) || 30;
+  var bundle = parseInt(document.getElementById('bundleCount').value) || 1;
+  var pf = parseFloat(document.getElementById('powerFactor').value) || 0.85;
+  var currentA, powerKw;
+
+  if (mode === 'power') {
+    powerKw = parseFloat(document.getElementById('powerKw').value);
+    if (!powerKw || powerKw <= 0) { showToast('请输入有效功率'); return; }
+    currentA = (powerKw * 1000) / (Math.sqrt(3) * 380 * pf);
+  } else if (mode === 'current') {
+    currentA = parseFloat(document.getElementById('currentA').value);
+    if (!currentA || currentA <= 0) { showToast('请输入有效电流'); return; }
+    powerKw = currentA * Math.sqrt(3) * 380 * pf / 1000;
+  } else {
+    var cs = parseFloat(document.getElementById('cableSizeSelect').value);
+    var raw = getAmpacity(cs, ct, im);
+    var tc0 = tempCorrection(temp), bc0 = bundleCorrection(bundle);
+    currentA = raw * tc0 * bc0;
+    powerKw = currentA * Math.sqrt(3) * 380 * pf / 1000;
+  }
+
+  var tc = tempCorrection(temp), bc = bundleCorrection(bundle);
+  var required = currentA / (tc * bc);
+  var selected = 300;
+  for (var i = 0; i < CABLE_SIZES.length; i++) {
+    if (getAmpacity(CABLE_SIZES[i], ct, im) >= required) { selected = CABLE_SIZES[i]; break; }
+  }
+  var rawSel = getAmpacity(selected, ct, im);
+  var corrSel = rawSel * tc * bc;
+  var margin = (corrSel - currentA) / currentA * 100;
+  var maxP = corrSel * Math.sqrt(3) * 380 * pf / 1000;
+  var t = ct.toLowerCase();
+
+  var h = '';
+  h += '<div class="result-row"><span class="result-label">计算电流</span><span class="result-value highlight">' + currentA.toFixed(1) + ' A</span></div>';
+  h += '<div class="result-row"><span class="result-label">等效功率</span><span class="result-value">' + powerKw.toFixed(2) + ' kW</span></div>';
+  h += '<div class="result-row"><span class="result-label">推荐线径</span><span class="result-value highlight">' + selected + ' mm&sup2; <span class="badge badge-' + t + '">' + ct + '</span></span></div>';
+  h += '<div class="result-row"><span class="result-label">校正后载流量</span><span class="result-value">' + corrSel.toFixed(1) + ' A</span></div>';
+  h += '<div class="result-row"><span class="result-label">安全余量</span><span class="result-value ' + (margin>=15?'good':margin>=5?'warn':'danger') + '">' + margin.toFixed(1) + '%</span></div>';
+  h += '<div class="result-row"><span class="result-label">最大承载功率</span><span class="result-value">' + maxP.toFixed(2) + ' kW</span></div>';
+  h += '<div class="result-row"><span class="result-label">温度校正系数</span><span class="result-value">' + tc.toFixed(2) + ' (' + temp + '&deg;C)</span></div>';
+  h += '<div class="result-row"><span class="result-label">并排校正系数</span><span class="result-value">' + bc.toFixed(2) + ' (' + bundle + '根)</span></div>';
+
+  var res = document.getElementById('result-cable');
+  res.innerHTML = h; res.classList.add('show');
+  renderCableTable(ct, im, selected, tc, bc, currentA);
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function renderCableTable(ct, im, sel, tc, bc, I) {
+  var h = '<div style="max-height:280px;overflow-y:auto;"><table class="cable-table">';
+  h += '<thead><tr><th>mm&sup2;</th><th>基准 A</th><th>校正 A</th><th></th></tr></thead><tbody>';
+  for (var i = 0; i < CABLE_SIZES.length; i++) {
+    var s = CABLE_SIZES[i], r = getAmpacity(s, ct, im), c = r * tc * bc;
+    var ok = c >= I, cls = s === sel ? 'selected' : '';
+    h += '<tr class="' + cls + '"><td>' + s + '</td><td>' + r + '</td><td>' + c.toFixed(1) + '</td>';
+    h += '<td style="color:' + (ok?'#81c784':'#ef5350') + '">' + (ok?'&#10003; 满足':'&#10007; 不足') + '</td></tr>';
+  }
+  h += '</tbody></table></div>';
+  document.getElementById('cable-table-container').innerHTML = h;
+}
+
+// ===================== 2. 电压降 =====================
+function calcVoltageDrop() {
+  var I = parseFloat(document.getElementById('vdCurrent').value);
+  var L = parseFloat(document.getElementById('vdLength').value);
+  var S = parseFloat(document.getElementById('vdCableSize').value);
+  var pf = parseFloat(document.getElementById('vdPowerFactor').value) || 0.85;
+  if (!I || !L || I <= 0 || L <= 0) { showToast('请填写完整参数'); return; }
+  var R = 0.0218 * L / S;
+  var X = 0.08 * L / 1000;
+  var sinP = Math.sqrt(1 - pf * pf);
+  var dU = Math.sqrt(3) * I * (R * pf + X * sinP);
+  var dUp = dU / 380 * 100;
+  var st = dUp <= 3 ? 'good' : dUp <= 5 ? 'warn' : 'danger';
+  var stT = dUp <= 3 ? '合格 (<3%)' : dUp <= 5 ? '临界 (3%-5%)' : '超标 (>5%)';
+
+  var h = '';
+  h += '<div class="result-row"><span class="result-label">线路电阻 R</span><span class="result-value">' + R.toFixed(4) + ' &Omega;</span></div>';
+  h += '<div class="result-row"><span class="result-label">线路感抗 X</span><span class="result-value">' + X.toFixed(4) + ' &Omega;</span></div>';
+  h += '<div class="result-row"><span class="result-label">电压降 &Delta;U</span><span class="result-value highlight">' + dU.toFixed(2) + ' V</span></div>';
+  h += '<div class="result-row"><span class="result-label">电压降百分比</span><span class="result-value ' + st + '">' + dUp.toFixed(2) + '%</span></div>';
+  h += '<div class="result-row"><span class="result-label">判定结果</span><span class="result-value ' + st + '">' + stT + '</span></div>';
+  if (dUp > 5) h += '<div class="result-row" style="color:#ef5350;font-size:12px;margin-top:6px;">&#9888; 建议增大截面积或缩短供电距离</div>';
+
+  var res = document.getElementById('result-vdrop');
+  res.innerHTML = h; res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// ===================== 3. 电费 =====================
+function calcElectricCost() {
+  var P = parseFloat(document.getElementById('ecPower').value);
+  var pr = parseFloat(document.getElementById('ecPrice').value);
+  var dH = parseFloat(document.getElementById('ecDailyHours').value);
+  var mD = parseFloat(document.getElementById('ecMonthlyDays').value);
+  if (!P || P <= 0 || !pr || pr <= 0) { showToast('请填写完整参数'); return; }
+  var dK = P * dH, dC = dK * pr, mK = dK * mD, mC = mK * pr, yK = mK * 12, yC = mC * 12;
+
+  var h = '';
+  h += '<div class="result-row"><span class="result-label">日用电量</span><span class="result-value">' + dK.toFixed(1) + ' kWh</span></div>';
+  h += '<div class="result-row"><span class="result-label">日电费</span><span class="result-value">&yen;' + dC.toFixed(2) + '</span></div>';
+  h += '<div class="result-row"><span class="result-label">月用电量</span><span class="result-value">' + mK.toFixed(0) + ' kWh</span></div>';
+  h += '<div class="result-row"><span class="result-label">月电费</span><span class="result-value highlight">&yen;' + mC.toFixed(2) + '</span></div>';
+  h += '<div class="result-row"><span class="result-label">年用电量</span><span class="result-value">' + yK.toFixed(0) + ' kWh</span></div>';
+  h += '<div class="result-row"><span class="result-label">年电费</span><span class="result-value warn">&yen;' + yC.toFixed(2) + '</span></div>';
+
+  var res = document.getElementById('result-ecost');
+  res.innerHTML = h; res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// ===================== 4. 断路器 =====================
+function selectBreaker() {
+  var Ic = parseFloat(document.getElementById('cbCurrent').value);
+  var lt = document.getElementById('cbLoadType').value;
+  if (!Ic || Ic <= 0) { showToast('请输入计算电流'); return; }
+  var factor = {motor:1.5, lighting:1.1, welder:1.8, general:1.25}[lt];
+  var In = Ic * factor;
+  var std = [16,20,25,32,40,50,63,80,100,125,160,200,225,250,315,400,500,630,800,1000,1250,1600];
+  var sel = 1600;
+  for (var i = 0; i < std.length; i++) if (std[i] >= In) { sel = std[i]; break; }
+  var curve = (lt === 'motor' || lt === 'welder') ? 'D' : 'C';
+  var icu = sel >= 630 ? '65-85kA' : sel >= 400 ? '50-65kA' : '36kA';
+  var frame = sel <= 250 ? '250A壳架 MCCB' : sel <= 630 ? '630A壳架 MCCB' : sel <= 1600 ? '1600A框架 ACB' : '2000A+框架 ACB';
+  var tip = lt === 'motor' ? '&#9888; 电动机负载需校验启动电流与脱扣曲线配合，建议选用D曲线或电子脱扣器' : '';
+  var ltT = document.getElementById('cbLoadType').options[document.getElementById('cbLoadType').selectedIndex].text;
+
+  var h = '';
+  h += '<div class="result-row"><span class="result-label">计算电流</span><span class="result-value">' + Ic.toFixed(1) + ' A</span></div>';
+  h += '<div class="result-row"><span class="result-label">负载系数</span><span class="result-value">&times;' + factor + ' (' + ltT + ')</span></div>';
+  h += '<div class="result-row"><span class="result-label">整定电流 In</span><span class="result-value highlight">' + sel + ' A</span></div>';
+  h += '<div class="result-row"><span class="result-label">脱扣曲线</span><span class="result-value">' + curve + '曲线</span></div>';
+  h += '<div class="result-row"><span class="result-label">分断能力 Icu</span><span class="result-value">' + icu + '</span></div>';
+  h += '<div class="result-row"><span class="result-label">推荐壳架</span><span class="result-value">' + frame + '</span></div>';
+  if (tip) h += '<div class="result-row" style="color:#ffb74d;font-size:11px;margin-top:6px;">' + tip + '</div>';
+
+  var res = document.getElementById('result-breaker');
+  res.innerHTML = h; res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// ===================== 5. 短路电流 =====================
+function calcShortCircuit() {
+  var Sn = parseFloat(document.getElementById('scTrafoKva').value);
+  var Uk = parseFloat(document.getElementById('scTrafoUk').value);
+  var cs = parseFloat(document.getElementById('scCableSize').value);
+  var len = parseFloat(document.getElementById('scCableLength').value);
+  if (!Sn || !Uk || Sn <= 0 || Uk <= 0) { showToast('请填写完整参数'); return; }
+  var Zt = (Uk/100) * (0.4*0.4) / (Sn/1000) * 1000;
+  var Rc = 0.0218 * len / cs * 1000;
+  var Xc = 0.08 * len;
+  var Rt = 1.5 + Rc, Xt = Zt + Xc;
+  var Ztot = Math.sqrt(Rt*Rt + Xt*Xt);
+  var Ik3 = (0.4*1000) / (Math.sqrt(3) * Ztot / 1000);
+  var t = 0.1, K = 143;
+  var Smin = (Ik3 * 1000) * Math.sqrt(t) / K;
+  var ok = cs >= Smin;
+
+  var h = '';
+  h += '<div class="result-row"><span class="result-label">变压器阻抗 Zt</span><span class="result-value">' + Zt.toFixed(2) + ' m&Omega;</span></div>';
+  h += '<div class="result-row"><span class="result-label">电缆电阻 Rc</span><span class="result-value">' + Rc.toFixed(2) + ' m&Omega;</span></div>';
+  h += '<div class="result-row"><span class="result-label">电缆感抗 Xc</span><span class="result-value">' + Xc.toFixed(2) + ' m&Omega;</span></div>';
+  h += '<div class="result-row"><span class="result-label">总阻抗 Z</span><span class="result-value">' + Ztot.toFixed(2) + ' m&Omega;</span></div>';
+  h += '<div class="result-row"><span class="result-label">三相短路电流 Ik3</span><span class="result-value highlight">' + Ik3.toFixed(2) + ' kA</span></div>';
+  h += '<div class="result-row"><span class="result-label">最小热稳定截面</span><span class="result-value ' + (ok?'good':'danger') + '">' + Smin.toFixed(2) + ' mm&sup2;</span></div>';
+  h += '<div class="result-row"><span class="result-label">热稳定校核</span><span class="result-value ' + (ok?'good':'danger') + '">' + (ok?'&#10003; 合格':'&#10007; 不合格！需加大截面积') + '</span></div>';
+
+  var res = document.getElementById('result-shortcircuit');
+  res.innerHTML = h; res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// ===================== 6. 功率因数补偿 =====================
+function calcPFC() {
+  var P = parseFloat(document.getElementById('pfcPower').value);
+  var cos1 = parseFloat(document.getElementById('pfcCosPhi1').value);
+  var cos2 = parseFloat(document.getElementById('pfcCosPhi2').value);
+  var method = document.getElementById('pfcMethod').value;
+  if (!P || P <= 0 || !cos1 || !cos2) { showToast('请填写完整参数'); return; }
+  if (cos1 >= cos2) { showToast('目标功率因数应大于当前值'); return; }
+  var phi1 = Math.acos(cos1), phi2 = Math.acos(cos2);
+  var Qc = P * (Math.tan(phi1) - Math.tan(phi2));
+  var stdC = [5,10,15,20,25,30,40,50,60,75,100,125,150,200,250,300];
+  var selC = 300;
+  for (var i = 0; i < stdC.length; i++) if (stdC[i] >= Qc) { selC = stdC[i]; break; }
+  var stages = Math.ceil(selC / 25);
+  var loss = P * (1/cos1 - 1/cos2) * 0.03;
+  var saving = loss * 6000 * 0.85;
+  var S1 = P/cos1, S2 = P/cos2, released = S1 - S2;
+  var mTxt = {central:'集中补偿 (低压母线)', group:'分组补偿 (配电箱)', local:'就地补偿 (设备端)'}[method];
+
+  var h = '';
+  h += '<div class="result-row"><span class="result-label">需补偿无功 Qc</span><span class="result-value highlight">' + Qc.toFixed(2) + ' kvar</span></div>';
+  h += '<div class="result-row"><span class="result-label">推荐电容器容量</span><span class="result-value highlight">' + selC + ' kvar</span></div>';
+  h += '<div class="result-row"><span class="result-label">建议分组数</span><span class="result-value">约 ' + stages + ' 组 (25kvar/组)</span></div>';
+  h += '<div class="result-row"><span class="result-label">补偿方式</span><span class="result-value">' + mTxt + '</span></div>';
+  h += '<div class="result-row"><span class="result-label">补偿前视在功率</span><span class="result-value">' + S1.toFixed(2) + ' kVA</span></div>';
+  h += '<div class="result-row"><span class="result-label">补偿后视在功率</span><span class="result-value good">' + S2.toFixed(2) + ' kVA</span></div>';
+  h += '<div class="result-row"><span class="result-label">释放变压器容量</span><span class="result-value good">' + released.toFixed(2) + ' kVA</span></div>';
+  h += '<div class="result-row"><span class="result-label">年节省电费(估)</span><span class="result-value good">&yen;' + saving.toFixed(0) + '</span></div>';
+
+  var res = document.getElementById('result-pfc');
+  res.innerHTML = h; res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+  toggleCalcMode();
+  showInstallPrompt();
+});
+</script>
+
+</body>
+</html>
